@@ -1,0 +1,36 @@
+<%= simple_form_for @feedback, url: @submit_url, method: :post, html: {class: 'form-inline'} do |f| %>
+
+  <p>
+    Please select water bodies in TMNP that are meaningful to you for <b><%= title %></b>.<br>
+    <b>Rank 1</b> is most important to you, <b>Rank 10</b> is least important. Complete at least rankings 1-5.
+  </p>
+
+  <p>
+    Water bodies are numbered on the map and in the lists. The map will automatically move to show a water body that you select for a ranking.
+  </p>
+
+  <%= f.error_notification %>
+
+  <% if @feedback.errors.any? && @feedback.errors.messages[:base] && !@feedback.errors.messages[:base].empty? %>
+    <div class="alert alert-error">
+      <% @feedback.errors.messages[:base].each do |msg| %>
+        <%= msg %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= f.input :water_body_rank_1, label: 'Rank 1', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_2, label: 'Rank 2', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_3, label: 'Rank 3', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_4, label: 'Rank 4', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_5, label: 'Rank 5', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_6, label: 'Rank 6', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_7, label: 'Rank 7', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_8, label: 'Rank 8', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_9, label: 'Rank 9', :required => false, collection: water_bodies, label_html: {class: 'rank_input'} %>
+  <%= f.input :water_body_rank_10, label: 'Rank 10', :required => false, collection: water_bodies, label_html: {class: 'rank_input2'} %>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Next', :class => "btn-primary", data: {:loading_text => "Please wait..."} %>
+  </div>
+<% end %>

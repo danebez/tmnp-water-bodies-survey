@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ecosystem_service_category: MyString
+  ranking: 1
+  water_body: MyString
+
+two:
+  ecosystem_service_category: MyString
+  ranking: 1
+  water_body: MyString

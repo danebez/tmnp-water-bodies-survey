@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ecosystem service category:</b>
+  <%= @feedback.ecosystem_service_category %>
+</p>
+
+<p>
+  <b>Ranking:</b>
+  <%= @feedback.ranking %>
+</p>
+
+<p>
+  <b>Water body:</b>
+  <%= @feedback.water_body %>
+</p>
+
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>

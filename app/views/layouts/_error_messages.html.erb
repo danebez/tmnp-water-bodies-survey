@@ -1,0 +1,14 @@
+<%# NOTE: flash messages, e.g. flash[:notice] = 'success flash' and flash.now[:error] = 'error flash' are displayed automatically by Rails %>
+
+<% if target.errors.any? %>
+  <div class="alert alert-error">
+    <h4>Please correct the following <%= pluralize_without_count(target.errors.size, "error") %> and try again:</h4>
+    <ul>
+      <% target.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

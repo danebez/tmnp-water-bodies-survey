@@ -1,0 +1,12 @@
+<%= simple_form_for @respondent, :html => {} do |f| %>
+
+  <%= f.error_notification %>
+
+  <%= f.input :fullname, label: 'Full name' %>
+  <%= f.input :email, label: 'Email address' %>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Next', :class => "btn-primary", data: {:loading_text => "Please wait..."} %>
+  </div>
+
+<% end %>
