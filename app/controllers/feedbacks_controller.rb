@@ -96,6 +96,7 @@ class FeedbacksController < ApplicationController
 
   def create3
     @feedback = Feedback.new(params[:feedback])
+    @feedback.respondent = Respondent.find(session[:respondent_id])
 
     @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
     @submit_url = create3_feedback_path
@@ -109,6 +110,7 @@ class FeedbacksController < ApplicationController
 
   def create4
     @feedback = Feedback.new(params[:feedback])
+    @feedback.respondent = Respondent.find(session[:respondent_id])
 
     @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
     @submit_url = create4_feedback_path
@@ -122,12 +124,13 @@ class FeedbacksController < ApplicationController
 
   def create5
     @feedback = Feedback.new(params[:feedback])
+    @feedback.respondent = Respondent.find(session[:respondent_id])
 
     @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
     @submit_url = create5_feedback_path
 
     if @feedback.save
-      redirect_to complete_feedback_path, notice: 'Step 5 saved.'
+      redirect_to new6_feedback_path, notice: 'Step 5 saved.'
     else
       render action: "new5"
     end
@@ -135,6 +138,7 @@ class FeedbacksController < ApplicationController
 
   def create6
     @feedback = Feedback.new(params[:feedback])
+    @feedback.respondent = Respondent.find(session[:respondent_id])
 
     @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
     @submit_url = create6_feedback_path
