@@ -32,7 +32,7 @@ class Feedback < ActiveRecord::Base
                     water_body_rank_10]
 
     result = water_bodies.detect{ |e| water_bodies.count(e) > 1 }
-    if result != ''
+    if result && result != ''
       errors[:base] << 'You have selected ' + result.to_s + ' more than once.'
     end
 

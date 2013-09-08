@@ -1,5 +1,46 @@
-<h3>Water bodies in TMNP survey</h3>
+<div class="span6">
+  <p style="text-align: center;">
+    <%= image_tag("/assets/UCT.jpg", width: '120') %>
+    <%= image_tag("/assets/SANParks.png", width: '120') %>
+  </p>
+</div>
 
-<p>Short introduction</p>
+<div class="span6">
 
-<%= render 'form' %>
+  <h3>Water bodies in TMNP survey</h3>
+
+  <div style="height: 12px;"></div>
+
+  <p>
+    This mapping survey forms part of a PhD study which hopes to understand the life-fulfilling/cultural
+    values that people assign to freshwater bodies in Table Mountain National Park. The larger research
+    project looks at how communities in Cape Town value, use, impact and govern water-related
+    ecosystem services which originate in Table Mountain National Park.
+  </p>
+
+  <p>
+    This questionnaire should take between 10 and 20 minutes to complete and consists of a set of
+    questions relating to which water bodies offer a particular life-fulfilling ecosystem service. Categories
+    include:
+  </p>
+
+  <ol>
+    <li>Recreation</li>
+    <li>Aesthetics/existence</li>
+    <li>Cultural/historical</li>
+    <li>Cognitive development/learning/scientific discovery</li>
+    <li>Spiritual/religious</li>
+    <li>Negative</li>
+  </ol>
+
+  <p>All water bodies are numbered for easy reference.</p>
+
+  <p>
+    This research is being undertaken by researchers based at the University of Cape
+    Town in collaboration with SANParks. To contact the researchers please email
+    <%= link_to 'tablemountainstudy@gmail.com', 'mailto:tablemountainstudy@gmail.com' %>.
+  </p>
+
+  <%= render 'form' %>
+
+</div>
