@@ -48,8 +48,11 @@ $ ->
 #    alert($('iframe#map').contents().find('body').scrollLeft() + ', ' + $('iframe#map').contents().find('body').scrollTop())
 #  )
 
-  iframe_body = $('iframe#map').contents().find('body')
-  iframe_body.animate({scrollLeft: 491, scrollTop: 0}, 'slow')
+  $('iframe#map').ready(
+    () ->
+      iframe_body = $('iframe#map').contents().find('body')
+      iframe_body.animate({scrollLeft: 491, scrollTop: 0}, 'slow')
+  )
 
   $('select').change () ->
     water_body = $(this).find('option:selected').text()
