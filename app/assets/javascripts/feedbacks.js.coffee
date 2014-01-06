@@ -60,3 +60,21 @@ $ ->
 
     iframe_body = $('iframe#map').contents().find('body')
     iframe_body.animate({scrollLeft: positions[water_body][0], scrollTop: positions[water_body][1]}, 'slow')
+
+  $('input#not_applicable').change () ->
+    if $('input#not_applicable').is(':checked')
+      # hide selects, labels and errors
+      $('select').each (index, element) ->
+        $("label[for='"+$(element).attr('id')+"']").hide()
+        $(element).hide()
+
+      $('div.error').hide()
+      $('div.alert-error').hide()
+    else
+      # show selects, labels and errors
+      $('select').each (index, element) ->
+        $("label[for='"+$(element).attr('id')+"']").css('display', 'inline')
+        $(element).css('display', 'inline')
+
+      $('div.error').show()
+      $('div.alert-error').show()

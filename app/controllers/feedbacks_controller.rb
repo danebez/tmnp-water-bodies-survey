@@ -98,7 +98,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(params[:feedback])
     @feedback.respondent = Respondent.find(session[:respondent_id])
 
-    @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
+    @feedback.ecosystem_service_category = ecosystem_service_categories[2][0]
     @submit_url = create3_feedback_path
 
     if @feedback.save
@@ -112,7 +112,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(params[:feedback])
     @feedback.respondent = Respondent.find(session[:respondent_id])
 
-    @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
+    @feedback.ecosystem_service_category = ecosystem_service_categories[3][0]
     @submit_url = create4_feedback_path
 
     if @feedback.save
@@ -126,7 +126,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(params[:feedback])
     @feedback.respondent = Respondent.find(session[:respondent_id])
 
-    @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
+    @feedback.ecosystem_service_category = ecosystem_service_categories[4][0]
     @submit_url = create5_feedback_path
 
     if @feedback.save
@@ -140,7 +140,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(params[:feedback])
     @feedback.respondent = Respondent.find(session[:respondent_id])
 
-    @feedback.ecosystem_service_category = ecosystem_service_categories[1][0]
+    @feedback.ecosystem_service_category = ecosystem_service_categories[5][0]
     @submit_url = create6_feedback_path
 
     if @feedback.save

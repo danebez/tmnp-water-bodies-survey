@@ -14,9 +14,12 @@ class Feedback < ActiveRecord::Base
                   :water_body_rank_7,
                   :water_body_rank_8,
                   :water_body_rank_9,
-                  :water_body_rank_10
+                  :water_body_rank_10,
+                  :none
 
-  validates :water_body_rank_1, :water_body_rank_2, :water_body_rank_3, :water_body_rank_4, :water_body_rank_5, :presence => true
+  attr_accessor :none
+
+  validates :water_body_rank_1, :water_body_rank_2, :water_body_rank_3, :water_body_rank_4, :water_body_rank_5, :presence => true, :unless => Proc.new { |feedback| @none == "1" }
   validates :ecosystem_service_category, :length => {:maximum => 60}
 
   def duplicates

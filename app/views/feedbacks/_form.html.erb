@@ -5,7 +5,11 @@
   </p>
 
   <p>
-    <b>Rank 1</b> is most important to you, <b>Rank 10</b> is least important. Complete at least rankings 1-5. Water bodies are numbered on the map and in the list for each ranking. The map will automatically move to show a water body that you select for a ranking.
+    <b>Rank 1</b> is most important to you, <b>Rank 10</b> is least important. Complete at least rankings 1-5. Water bodies are numbered on the map. The map will automatically move to show a water body that you select for a ranking.
+  </p>
+
+  <p>
+    <%= f.input :none, as: :boolean, label: 'Not applicable: I do not use water bodies in the park for this type of life-fulfilling ecosystem service.', :wrapper => :inline_checkbox, label_html: {class: 'rank_not_applicable'}, input_html: {id: 'not_applicable'} %>
   </p>
 
   <%= f.error_notification %>
